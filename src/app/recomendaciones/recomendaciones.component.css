@@ -1,0 +1,13 @@
+h3 > span{
+  color: #418FDE;
+}
+
+#records{
+  display: flex;
+  justify-content: space-around;
+}
+
+.example-card{
+  width: 80%;
+  height: 500px;
+}

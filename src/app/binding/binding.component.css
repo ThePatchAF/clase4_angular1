@@ -1,0 +1,9 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+  border: solid gold 3px;
+  border-radius: 25px;
+}

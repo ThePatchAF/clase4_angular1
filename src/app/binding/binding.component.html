@@ -1,0 +1,24 @@
+<div class="container">
+  <p>{{name}}</p>
+  <button (click)="name='Paola'">Cambiar nombre</button>
+  <button (click)="addApellido()">Agregar Apellido</button>
+</div>
+<div class="container">
+  <div>{{contador}}</div>
+  <button (click)="suma()">Sumar</button>
+  <button (click)="resta()">Restar</button>
+</div>
+<div class="container">
+  <h2>Frameworks JS</h2>
+  <ul>
+    <li (click)="verSeleccion($event)">ANGULAR</li>
+    <li (click)="verSeleccion($event)">REACT</li>
+    <li (click)="verSeleccion($event)">VUE</li>
+  </ul>
+</div>
+<div class="container">
+  <div [style.font-size.px]="tamano">
+    Cambiare el tamaño con two way binding
+  </div>
+  <input type="text" name="" id="" [(ngModel)]="tamano">
+</div>

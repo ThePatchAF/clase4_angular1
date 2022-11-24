@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Directiva ngClass</h1>
+  <input type="checkbox" (change)="isChecked = !isChecked">
+  <label for="">Agregar clases</label>
+  <div class="cuadrado" [ngClass]="{azul: isChecked}"></div>
+  <div class="cuadrado" [ngClass]="{'azul grande': isChecked}"></div>
+</div>
+<div class="container">
+  <h1>ngClass con objeto</h1>
+  <label for="rojo"><input id="rojo" type="checkbox" (change)="pasarRojo = !pasarRojo; setCambiarColores()">Cambiar a rojo</label>
+  <label for="verde"><input id="verde" type="checkbox" (change)="pasarVerde = !pasarVerde; setCambiarColores()">Cambiar a verde</label>
+  <label for="morado"><input id="morado" type="checkbox" (change)="pasarMorado = !pasarMorado; setCambiarColores()">Cambiar a morado</label>
+
+  <div class="cuadrado" [ngClass]="cambiarColores">
+
+  </div>
+</div>
+
+<div class="container">
+  <h1>Control con ngStyle</h1>
+  <label for="tamano"><input id="tamano" type="checkbox" (change)="hacerGrande = !hacerGrande">Cambiar tamaño</label>
+  <div [style.font-size]="hacerGrande ? 'x-large' : 'smaller'">
+    Esto puede cambiar de tamaño
+  </div>
+</div>
+
+<div class="container">
+  <h1>Variables de referencia (#var)</h1>
+  <label for="var">Escribe Algo</label>
+  <input type="text" name="" id="var" #nombre>
+  <button (click)="mostrarInput(nombre.value, nombre)">Mostrar Valor</button>
+</div>
+
+<div class="container">
+  <input type="checkbox" (change)="template = !template">
+  <h1>Todo lo que se puede
+    <ng-template *ngIf="!template" >
+      <label for="">Imaginar</label>
+    </ng-template>
+    es real
+  </h1>
+</div>

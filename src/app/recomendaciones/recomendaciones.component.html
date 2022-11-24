@@ -1,0 +1,38 @@
+<p>recomendaciones works!</p>
+<h3><span>¡Hola!</span> Estas son las mejores recomendaciones</h3>
+<div id="records">
+  <div *ngFor="let producto of productos">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="producto.imagen" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h6>{{producto.nombre}}</h6>
+        <h4>{{producto.precio}}</h4>
+        <p>
+          <mat-icon *ngIf="producto.envio=='no'" style="color: #418FDE" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          <mat-icon *ngIf="producto.envio=='si'" style="color: #418FDE" aria-label="Example home icon" fontIcon="local_shipping"></mat-icon>
+
+          {{producto.envio}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<h2>Uso del ngSwitch</h2>
+<label for="">Escribe un valor del 1 al 3: <input type="number" [(ngModel)]="valor"></label>
+<div [ngSwitch]="valor">
+  <div *ngSwitchCase="1">Angular</div>
+  <div *ngSwitchCase="2">React</div>
+  <div *ngSwitchCase="3">Vue</div>
+  <div *ngSwitchDefault>No hay un framework seleccionado</div>
+
+</div>

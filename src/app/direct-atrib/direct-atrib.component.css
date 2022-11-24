@@ -1,0 +1,31 @@
+div{
+  margin-bottom: 2em;
+}
+.container{
+  border: 1px solid #ccc;
+}
+.cuadrado{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(245, 22, 89);
+}
+.azul{
+  background-color: blue;
+}
+
+.rojo{
+  background-color: red;
+}
+
+.verde{
+  background-color: green;
+}
+
+.morado{
+  background-color: rgb(195, 0, 255);
+}
+
+.grande{
+  width: 300px;
+  height: 300px;
+}

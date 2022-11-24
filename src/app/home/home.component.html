@@ -1,0 +1,52 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <div>
+      <button (click)="showFiller = !showFiller" mat-raised-button [routerLink]="['/login']">
+        Cerrar Sesión
+      </button>
+    </div>
+    <div>
+    <button mat-raised-button [routerLink]="['/binding']">
+      Binding
+    </button>
+    </div>
+    <div>
+      <button mat-raised-button [routerLink]="['/condicional']">
+        Condicional
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button [routerLink]="['/direct-atrib']">
+        Directiva de atributo
+      </button>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()" >
+      Ver Componentes de clases
+    </button>
+    <div class="container">
+      <h1>Productos</h1>
+      <div class="ofertas">
+        <div *ngFor="let producto of productos" class="producto">
+          <mat-card class="example-card">
+
+            <img mat-card-image [src]="producto.imagenURL" alt="Photo of a Shiba Inu" routerLink="../descripcion/{{producto.id}}">
+            <mat-card-content>
+              <mat-card-title>{{producto.nombre}}</mat-card-title>
+              <mat-card-subtitle>Bs. {{producto.precio}}</mat-card-subtitle>
+
+              <p class="envio" *ngIf="producto.tipoEnvio=='Gratis'" style="color: #18AE60">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="local_shipping">local_shipping</mat-icon>Envío Gratis
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</mat-drawer-container>

@@ -1,0 +1,41 @@
+<ng-container *ngIf="!estaLogueado; else siEstaLogueado">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" name="" required="">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="" required="">
+        <label>Password</label>
+      </div>
+      <a href="#" (click)="estaLogueado=true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Iniciar Sesión
+      </a>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Registrarse
+      </a>
+    </form>
+  </div>
+</ng-container>
+<ng-template #siEstaLogueado>
+  <div class="login-box">
+    <h2>Te haz logueado correctamente!</h2>
+    <a href="#" (click)="estaLogueado=false">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Cerrar Sesión
+    </a>
+  </div>
+</ng-template>
